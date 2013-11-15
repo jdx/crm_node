@@ -18,6 +18,8 @@ mongo.Db.connect mongoUri, (err, db) ->
 app.get "/", (request, response) ->
   response.send "CRM node"
 
+app.get "/mu-14700fa0-c283368a-02ee6b23-dca88bcf", (request, response) -> response.send "42"
+
 app.get "/api/v1/customers.json", (request, response) ->
   collection.find().toArray (err, customers) ->
     customers = _.map customers, (c) ->
